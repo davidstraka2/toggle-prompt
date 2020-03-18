@@ -15,6 +15,8 @@ Toggle between normal and alternative PS1:
 toggle-prompt
 ```
 
+![Basic usage demo](docs/demo-usage-basic.gif)
+
 Show help:
 
 ```sh
@@ -30,6 +32,8 @@ toggle-prompt PS1 <value>
 ```
 
 (alias: `ps1`)
+
+![PS1 usage demo](docs/demo-usage-ps1.gif)
 
 ## Bugs
 
