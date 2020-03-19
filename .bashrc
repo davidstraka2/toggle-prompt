@@ -10,7 +10,7 @@
 # Repository: https://github.com/davidstraka2/toggle-prompt
 # Bugs: https://github.com/davidstraka2/toggle-prompt/issues
 TOGGLE_PROMPT_PS1="-> "
-__TOGGLE_PROMPT_PS1_FULL=$PS1
+__TOGGLE_PROMPT_PS1_FULL="$PS1"
 __TOGGLE_PROMPT_STATE=1
 function toggle-prompt () {
     # If help is requested, show help
@@ -44,6 +44,8 @@ function toggle-prompt () {
     # Else if toggle from full PS1 to alternative PS1 is requested
     elif [ $__TOGGLE_PROMPT_STATE -eq 1 ]
     then
+        # Update full PS1
+        __TOGGLE_PROMPT_PS1_FULL="$PS1"
         # Update PS1 to alternative PS1
         PS1="$TOGGLE_PROMPT_PS1"
         # Update state
@@ -51,6 +53,8 @@ function toggle-prompt () {
     # Else if toggle from alternative PS1 to full PS1 is requested
     elif [ $__TOGGLE_PROMPT_STATE -eq 2 ]
     then
+        # Update alternative PS1
+        TOGGLE_PROMPT_PS1="$PS1"
         # Update PS1 to full PS1
         PS1="$__TOGGLE_PROMPT_PS1_FULL"
         # Update state
